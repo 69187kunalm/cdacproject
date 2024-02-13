@@ -15,7 +15,7 @@ const AdminHomePage = () => {
         <p>This is the dashboard for managing users, products, and settings.</p>
       </div>
 
-      <Footer/>
+      <Footer/> 
     </div>
   );
 };
