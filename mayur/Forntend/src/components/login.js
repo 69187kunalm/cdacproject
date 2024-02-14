@@ -71,19 +71,23 @@ const LoginForm = ()=>{
             console.log(response)
             if(response.data.length!=0){
                 if(response.data.role.role_id==2){
+                    console.log(response)
                     localStorage.setItem('user',response.data.email)
+                    localStorage.setItem('uid',response.data.users[0].user_id)
                     localStorage.setItem('login',true)
                     navigate('/ownerhome')
                 }
                 else if(response.data.role.role_id==3){
                     console.log("move to cutomer")
                     localStorage.setItem('user',response.data.email)
+                    localStorage.setItem('uid',response.data.users[0].user_id)
                     localStorage.setItem('login',true)
                     navigate('/customerhome')
                 }
                 else if(response.data.role.role_id==1){
                     console.log("move to cutomer")
                     localStorage.setItem('user',response.data.email)
+                    localStorage.setItem('uid',response.data.users[0].user_id)
                     localStorage.setItem('login',true)
                     navigate('/adminhome')
                 }
@@ -144,7 +148,7 @@ const LoginForm = ()=>{
                 </div>
 
                 <div class="mt-3 d-grid gap-2 ms-5 me-5 pt-4">
-                    <button className={cust.email.valid && cust.password.valid&&capVal!=null ? "btn btn-primary":"btn btn-primary disabled"}
+                    <button className={cust.email.valid && cust.password.valid ? "btn btn-primary":"btn btn-primary disabled"}
                    onClick={(e)=>{
                     submitData(e);
                    }}>Login</button>
