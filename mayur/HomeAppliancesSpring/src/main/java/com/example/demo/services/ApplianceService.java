@@ -87,5 +87,18 @@ public class ApplianceService {
 			
 		}
 	}
-	
+	public int verifyAppliance(int id) {
+	    Appliance a = getone(id);
+	    a.setIsverified(1);
+
+	    // Save the updated Appliance entity
+	    try {
+	        arepo.save(a);
+	        return 1;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return 0;
+	    }
+	}
+
 }
