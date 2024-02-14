@@ -1,5 +1,7 @@
 package com.example.demo.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +13,9 @@ import org.springframework.web.multipart.MultipartFile;
 import com.example.demo.dao.Appliancedao;
 import com.example.demo.entities.Appliance;
 import com.example.demo.services.ApplianceService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -36,5 +41,17 @@ public class ApplianceController {
 		}
 		return flag;
 	}
+	@GetMapping("/getAppliances")
+	public List<Appliance> getMethodName() {
+		return  as.getApplianceVerified();
+	}
+	@GetMapping("/deleteAppliance")
+	public int delAppliance(@RequestParam int id)
+	{
+		return as.deleteAppliance(id);
+	}
+	
+	
+	
 	
 }

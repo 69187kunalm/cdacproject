@@ -30,6 +30,11 @@ public class ApplianceService {
 		return arepo.findAll();
 	}
 	
+	public List<Appliance> getApplianceVerified() {
+	  return arepo.getVerifiedAppliance();
+	}
+	
+	
 	public Appliance getone(int App_id)
 	{
 		Appliance c=null;
@@ -67,6 +72,20 @@ public class ApplianceService {
 			return true;
 		}
 		return false;
+	}
+	
+	public int deleteAppliance(int id)
+	{
+		try {
+			arepo.deleteById(id);
+			return 1;
+			
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			return 0;
+			
+		}
 	}
 	
 }
