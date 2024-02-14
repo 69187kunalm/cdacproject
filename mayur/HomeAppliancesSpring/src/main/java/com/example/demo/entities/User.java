@@ -1,5 +1,8 @@
 package com.example.demo.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
@@ -10,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -45,6 +49,10 @@ public class User {
 	@JoinColumn(name="login_id")
 	@JsonIgnoreProperties("users")
 	Login login;
+	
+	@OneToMany(mappedBy="user",cascade=CascadeType.ALL)
+	@JsonIgnoreProperties("user")
+	Set<Appliance> appliances=new HashSet<>();
 	
 	public User(String fname, String lname, int i, String contactno, Login lg1) {
 		this.fname = fname;

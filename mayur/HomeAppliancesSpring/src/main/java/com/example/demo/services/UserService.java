@@ -1,5 +1,7 @@
 package com.example.demo.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,11 @@ public class UserService {
 	
 	@Autowired
 	LoginService logserv;
+	
+	public User getOne(int id) {
+		Optional<User> u1 = userrepo.findById(id);
+		return u1.get();
+	}
 	
 	public User register(Userdao u1) {
 	
