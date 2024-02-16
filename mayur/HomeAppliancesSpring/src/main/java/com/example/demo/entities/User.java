@@ -14,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -53,6 +54,10 @@ public class User {
 	@OneToMany(mappedBy="user",cascade=CascadeType.ALL)
 	@JsonIgnoreProperties("user")
 	Set<Appliance> appliances=new HashSet<>();
+	
+	@OneToOne(mappedBy = "user")
+	@JsonIgnoreProperties("user")
+	Location loc;
 	
 	public User(String fname, String lname, int i, String contactno, Login lg1) {
 		this.fname = fname;

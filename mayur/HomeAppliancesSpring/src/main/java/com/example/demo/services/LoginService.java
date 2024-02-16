@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 
 import com.example.demo.entities.Login;
+import com.example.demo.entities.User;
 import com.example.demo.repositories.LoginRepository;
 
 
@@ -34,4 +35,19 @@ public class LoginService {
 		}
 		return res;
 	}
+	public Login getEmail(String email)
+	{
+		return logrepo.findByEmail(email);
+	}
+	public void updatePassword(String email,String newPassword)
+	{
+		Login login=getEmail(email);
+		if(login!=null)
+		{
+
+			login.setPassword(newPassword);
+			logrepo.save(login);	
+		}
+	}
+	
 }

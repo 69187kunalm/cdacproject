@@ -45,7 +45,7 @@ public class ApplianceController {
 	}
 	
 	@GetMapping("/getAppliances")
-	public List<Appliance> getMethodName() {
+	public List<Appliance> getVerifiedAppliances() {
 		return  as.getApplianceVerified();
 	}
 	@GetMapping("/deleteAppliance")

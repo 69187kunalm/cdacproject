@@ -1,5 +1,7 @@
 package com.example.demo.services;
 
+import java.util.List;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +27,17 @@ public class UserService {
 	@Autowired
 	LoginService logserv;
 	
+	public List<User> getAllUser()
+	{
+		return userrepo.findAll();
+	}
+	
 	public User getOne(int id) {
 		Optional<User> u1 = userrepo.findById(id);
 		return u1.get();
 	}
+	
+	
 	
 	public User register(Userdao u1) {
 	
@@ -47,5 +56,7 @@ public class UserService {
 		
 		return userrepo.save(u2);
 	}
+	
+	 
 	
 }
