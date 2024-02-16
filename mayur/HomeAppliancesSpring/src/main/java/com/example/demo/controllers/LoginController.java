@@ -44,7 +44,7 @@ public class LoginController {
         } else {
             // Log or print details about the non-existent email
             System.out.println("Email not found: " + email);
-            return ResponseEntity.ok("Email not exists. Please register.");
+            return ResponseEntity.ok("Please enter valid Email");
         }
     }
 }

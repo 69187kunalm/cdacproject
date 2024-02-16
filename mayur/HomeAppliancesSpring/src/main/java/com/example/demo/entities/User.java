@@ -55,7 +55,7 @@ public class User {
 	@JsonIgnoreProperties("user")
 	Set<Appliance> appliances=new HashSet<>();
 	
-	@OneToOne(mappedBy = "user")
+	@OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("user")
 	Location loc;
 	
