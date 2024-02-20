@@ -41,6 +41,5 @@ public class Category {
 	Set<Appliance> appliances=new HashSet<>();
 	
 	
-	
 
 }

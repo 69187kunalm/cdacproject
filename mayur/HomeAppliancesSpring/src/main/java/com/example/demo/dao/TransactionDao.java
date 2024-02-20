@@ -1,16 +1,22 @@
 package com.example.demo.dao;
 
+import java.time.LocalDate;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class UpdatepasswordDao {
-	 private String email;
-	    private String oldPassword;
-	    private String newPassword;
+@NoArgsConstructor
+public class TransactionDao {
+	LocalDate date;
+	int doneby;
+	int touser;
+	double amount;
+	String mode;
+	boolean status;
 }

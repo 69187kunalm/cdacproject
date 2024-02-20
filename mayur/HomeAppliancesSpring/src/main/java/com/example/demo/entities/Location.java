@@ -1,6 +1,5 @@
 package com.example.demo.entities;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;

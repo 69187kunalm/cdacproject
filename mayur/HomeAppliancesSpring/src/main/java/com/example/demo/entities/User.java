@@ -59,6 +59,14 @@ public class User {
 	@JsonIgnoreProperties("user")
 	Location loc;
 	
+	@OneToMany(mappedBy = "doneby",cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("doneby")
+	Set<Transaction> donetransactions = new HashSet<>();
+	
+	@OneToMany(mappedBy = "touser",cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("touser")
+	Set<Transaction> receivedtransactions = new HashSet<>();
+	
 	public User(String fname, String lname, int i, String contactno, Login lg1) {
 		this.fname = fname;
 		this.lname = lname;
