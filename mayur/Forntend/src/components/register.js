@@ -5,9 +5,11 @@ import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
 import AppFooter from "./appfooter";
 import AppHeader from "./appheader";
+import { useNavigate } from "react-router-dom";
 
 const RegisterForm = ()=>{
 
+    const navigate = useNavigate();
     const init ={
         firstname:{value:"",valid:false, touch:false, error:""},
         lastname:{value:"",valid:false, touch:false, error:""},
@@ -131,9 +133,15 @@ const RegisterForm = ()=>{
           .then((response) => {
             console.log(response)
             var data = response.data
+            var data = response.data;
+            sessionStorage.setItem("userid", data.user_id);
+            console.log(data.user_id);
             dispatch(init)
             setCapVal(null)
-            if(data!=null) setMsg("Success")
+            if(data!=null){
+                setMsg("Success")
+                navigate("/register/location")
+            }
             else setMsg("Something went wrong... Try again")
           }, (error) => {
             console.log(error);
