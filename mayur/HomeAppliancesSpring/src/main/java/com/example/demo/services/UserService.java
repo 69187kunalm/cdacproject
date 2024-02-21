@@ -1,7 +1,6 @@
 package com.example.demo.services;
 
 import java.util.List;
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,8 +36,6 @@ public class UserService {
 		return u1.get();
 	}
 	
-	
-	
 	public User register(Userdao u1) {
 	
 		Role r1 = null;
@@ -56,7 +53,5 @@ public class UserService {
 		
 		return userrepo.save(u2);
 	}
-	
-	 
 	
 }

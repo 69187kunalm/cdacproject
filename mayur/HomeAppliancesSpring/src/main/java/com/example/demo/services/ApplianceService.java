@@ -31,9 +31,8 @@ public class ApplianceService {
 	}
 	
 	public List<Appliance> getApplianceVerified() {
-	  return arepo.getVerifiedAppliance();
+		  return arepo.getVerifiedAppliance();
 	}
-	
 	
 	public Appliance getone(int App_id)
 	{
@@ -87,6 +86,7 @@ public class ApplianceService {
 			
 		}
 	}
+	
 	public int verifyAppliance(int id) {
 	    Appliance a = getone(id);
 	    a.setIsverified(1);
@@ -100,5 +100,18 @@ public class ApplianceService {
 	        return 0;
 	    }
 	}
-
+	
+	public byte[] getImage(int id) {
+		return arepo.getImage(id);
+	}
+	
+	public List<Appliance> getAllVerifiedAppliances(){
+		return arepo.getAllVerifiedAppliance();
+	}
+	
+	public List<Appliance> searchAppliance(String name)
+	{
+		return arepo.searchApp(name);
+	}
+	
 }

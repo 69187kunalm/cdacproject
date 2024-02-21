@@ -16,20 +16,20 @@ import com.example.demo.services.UserService;
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
-	 
+	
 	@Autowired
 	UserService us;
+	
+	@PostMapping("/register")
+	
+	public User register(@RequestBody Userdao user) {
+		return us.register(user);
+	}
 	
 	@GetMapping("/getalluser")
 	public List<User> getalluser()
 	{
 		return us.getAllUser();
-	}
-	
-	
-	@PostMapping("/register")
-	public User register(@RequestBody Userdao user) {
-		return us.register(user);
 	}
 	
 }
