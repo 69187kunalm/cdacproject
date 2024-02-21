@@ -18,5 +18,7 @@ public class TransactionDao {
 	int touser;
 	double amount;
 	String mode;
-	boolean status;
+	LocalDate startdate;
+	LocalDate enddate;
+	int app_id;
 }

@@ -109,4 +109,9 @@ public class ApplianceService {
 		return arepo.getAllVerifiedAppliance();
 	}
 	
+	public List<Appliance> searchAppliance(String name)
+	{
+		return arepo.searchApp(name);
+	}
+	
 }

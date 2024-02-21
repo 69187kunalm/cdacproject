@@ -67,4 +67,10 @@ public class ApplianceController {
 	public List<Appliance> getAllVerifiedAppliances(){
 		return as.getAllVerifiedAppliances();
 	}
+	
+	@GetMapping("/searchappliance/{name}")
+	public List<Appliance> sApp(@PathVariable String name)
+	{
+		return as.searchAppliance(name);
+	}
 }
