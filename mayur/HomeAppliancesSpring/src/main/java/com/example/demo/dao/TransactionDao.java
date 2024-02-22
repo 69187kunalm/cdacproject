@@ -21,4 +21,5 @@ public class TransactionDao {
 	LocalDate startdate;
 	LocalDate enddate;
 	int app_id;
+	String upi_id;
 }

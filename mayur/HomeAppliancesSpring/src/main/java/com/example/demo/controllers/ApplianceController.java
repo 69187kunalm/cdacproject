@@ -73,4 +73,9 @@ public class ApplianceController {
 	{
 		return as.searchAppliance(name);
 	}
+	
+	@GetMapping("/getappliancebyid")
+	public Appliance getApplianceById(@RequestParam int id) {
+		return as.getone(id);
+	}
 }

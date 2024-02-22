@@ -28,4 +28,8 @@ public interface ApplianceRepository extends JpaRepository<Appliance, Integer> {
 	
 	@Query("select A from Appliance A where name=:name and A.isverified=1")
 	public List<Appliance> searchApp(String name);
+	
+	@Modifying
+	@Query("update Appliance set onrent = 1 where App_id = :id")
+	public int updateOnRentStatus(int id);
 }

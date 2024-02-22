@@ -114,4 +114,8 @@ public class ApplianceService {
 		return arepo.searchApp(name);
 	}
 	
+	public int updateOnRentStatus(int id) {
+		return arepo.updateOnRentStatus(id);
+	}
+	
 }

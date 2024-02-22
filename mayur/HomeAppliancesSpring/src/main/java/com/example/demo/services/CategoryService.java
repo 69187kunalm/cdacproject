@@ -28,6 +28,7 @@ public class CategoryService {
 		}
 		return c;
 	}
+	
 	public List<Category> getAll()
 	{
 		return crepo.findAll();
